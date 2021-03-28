@@ -1,0 +1,42 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="container w-50">
+    <form method="POST">
+        <div class="form-group">
+            <label asp-for="UserModel.Surname"></label>
+            <input class="form-control" asp-for="UserModel.Surname" />
+        </div>
+        <div class="form-group">
+            <label asp-for="UserModel.Name"></label>
+            <input class="form-control" asp-for="UserModel.Name" />
+        </div>
+        <div class="form-group">
+            <label asp-for="UserModel.MiddleName"></label>
+            <input class="form-control" asp-for="UserModel.MiddleName" />
+        </div>
+        <div class="form-group">
+            <label asp-for="UserModel.City"></label>
+            <input class="form-control" asp-for="UserModel.City" />
+        </div>
+         <div class="form-group">
+            <label asp-for="UserModel.Birthday"></label>
+            <input type="date" class="form-control" asp-for="UserModel.Birthday" />
+        </div>
+        <div class="form-group">
+            <label asp-for="UserModel.Gender"></label>
+            <select asp-items="Html.GetEnumSelectList<Gender>()" class="form-control"
+                asp-for="UserModel.Gender"></select>
+        </div>
+        <div class="form-group">
+            <label asp-for="UserModel.Email"></label>
+            <input class="form-control" asp-for="UserModel.Email" />
+        </div>
+        <div class="form-group">
+            <input type="submit" class="btn btn-primary" />
+        </div>
+    </form>
+</div>
